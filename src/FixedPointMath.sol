@@ -23,27 +23,13 @@ type UFixed128x18 is uint128;
 /// @dev An unsigned 192 bit 18 decimal fixed point number
 type UFixed192x18 is uint192;
 
-using {
-    FixedPointMath.add,
-    FixedPointMath.sub,
-    FixedPointMath.mul,
-    FixedPointMath.div,
-    FixedPointMath.unsafeAdd,
-    FixedPointMath.unsafeSub,
-    FixedPointMath.unsafeMul,
-    FixedPointMath.unsafeDiv,
-    FixedPointMath.ceil,
-    FixedPointMath.floor,
-    FixedPointMath.round,
-    FixedPointMath.unwrap
-} for UFixed256x18 global;
-
 using FixedPointMath for UFixed64x18;
 using FixedPointMath for UFixed80x18;
 using FixedPointMath for UFixed96x18;
 using FixedPointMath for UFixed112x18;
 using FixedPointMath for UFixed128x18;
 using FixedPointMath for UFixed192x18;
+using FixedPointMath for UFixed256x18;
 
 /// @title Library for fixed point math operations
 /// @custom:coauthor ainmox (ainmox.eth)
