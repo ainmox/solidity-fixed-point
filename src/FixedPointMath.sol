@@ -4,6 +4,25 @@ pragma solidity >=0.8.8;
 /// @dev Commonly called WAD (https://github.com/makerdao/dss/blob/master/DEVELOPING.md#units)
 type UFixed256x18 is uint256;
 
+/// @dev An unsigned 64 bit 18 decimal fixed point number
+/// @dev Minimum supported value for 18 decimal fixed point numbers
+type UFixed64x18 is uint64;
+
+/// @dev An unsigned 80 bit 18 decimal fixed point number
+type UFixed80x18 is uint80;
+
+/// @dev An unsigned 96 bit 18 decimal fixed point number
+type UFixed96x18 is uint96;
+
+/// @dev An unsigned 112 bit 18 decimal fixed point number
+type UFixed112x18 is uint112;
+
+/// @dev An unsigned 128 bit 18 decimal fixed point number
+type UFixed128x18 is uint128;
+
+/// @dev An unsigned 192 bit 18 decimal fixed point number
+type UFixed192x18 is uint192;
+
 using {
     FixedPointMath.add,
     FixedPointMath.sub,
@@ -18,6 +37,13 @@ using {
     FixedPointMath.round,
     FixedPointMath.unwrap
 } for UFixed256x18 global;
+
+using FixedPointMath for UFixed64x18;
+using FixedPointMath for UFixed80x18;
+using FixedPointMath for UFixed96x18;
+using FixedPointMath for UFixed112x18;
+using FixedPointMath for UFixed128x18;
+using FixedPointMath for UFixed192x18;
 
 /// @title Library for fixed point math operations
 /// @custom:coauthor ainmox (ainmox.eth)
@@ -39,6 +65,60 @@ library FixedPointMath {
                 revert(0, 0)
             }
             result := mul(integer, X18_SCALING_FACTOR)
+        }
+    }
+
+    /// @dev Converts an unsigned 64 bit integer into an unsigned 64 bit 18 decimal fixed point number
+    /// @param value The unsigned 64 bit integer to convert
+    /// @return result The unsigned 64 bit 18 decimal fixed point number
+    function intoUFixed256x18(UFixed64x18 value) internal pure returns (UFixed256x18 result) {
+        assembly {
+            result := value
+        }
+    }
+
+    /// @dev Converts an unsigned 80 bit 18 decimal fixed point number into an unsigned 256 bit 18 decimal fixed point number
+    /// @param value The unsigned 80 bit integer to convert
+    /// @return result The unsigned 256 bit 18 decimal fixed point number
+    function intoUFixed256x18(UFixed80x18 value) internal pure returns (UFixed256x18 result) {
+        assembly {
+            result := value
+        }
+    }
+
+    /// @dev Converts an unsigned 96 bit 18 decimal fixed point number into an unsigned 256 bit 18 decimal fixed point number
+    /// @param value The unsigned 96 bit integer to convert
+    /// @return result The unsigned 256 bit 18 decimal fixed point number
+    function intoUFixed256x18(UFixed96x18 value) internal pure returns (UFixed256x18 result) {
+        assembly {
+            result := value
+        }
+    }
+
+    /// @dev Converts an unsigned 112 bit 18 decimal fixed point number into an unsigned 256 bit 18 decimal fixed point number
+    /// @param value The unsigned 112 bit integer to convert
+    /// @return result The unsigned 256 bit 18 decimal fixed point number
+    function intoUFixed256x18(UFixed112x18 value) internal pure returns (UFixed256x18 result) {
+        assembly {
+            result := value
+        }
+    }
+
+    /// @dev Converts an unsigned 128 bit 18 decimal fixed point number into an unsigned 256 bit 18 decimal fixed point number
+    /// @param value The unsigned 128 bit integer to convert
+    /// @return result The unsigned 256 bit 18 decimal fixed point number
+    function intoUFixed256x18(UFixed128x18 value) internal pure returns (UFixed256x18 result) {
+        assembly {
+            result := value
+        }
+    }
+
+    /// @dev Converts an unsigned 192 bit 18 decimal fixed point number into an unsigned 256 bit 18 decimal fixed point number
+    /// @param value The unsigned 192 bit integer to convert
+    /// @return result The unsigned 256 bit 18 decimal fixed point number
+    function intoUFixed256x18(UFixed192x18 value) internal pure returns (UFixed256x18 result) {
+        assembly {
+            result := value
         }
     }
 
