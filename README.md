@@ -18,7 +18,7 @@ A package which provides fixed point decimal types. This package supports Solidi
 
 All operations only support 256 bit fixed point types. Smaller types (e.g. `UFixed80x18`,`UFixed128x18`, `UFixed16x10`, 
 `UFixed32x10`) are expected to be upcasted to their corresponding 256 bit representations before performing calculations
-and then converted back to the appropriate type. This was done to keep the library as simple as possible.
+and then converted back to the appropriate type.
 
 Operations that a type supports are globally exported to all importers.
 
