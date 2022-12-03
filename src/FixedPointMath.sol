@@ -172,6 +172,7 @@ library FixedPointMath {
     }
 
     /// @dev Truncates the fractional component of an unsigned 256 bit 18 decimal fixed point number
+    /// @dev Alias for `floor`
     /// @param value The unsigned 256 bit 18 decimal fixed point number to truncate
     /// @return result The integer component of the number
     function truncate(UFixed256x18 value) internal pure returns (uint256 result) {
