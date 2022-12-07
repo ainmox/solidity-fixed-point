@@ -23,6 +23,37 @@ type UFixed128x18 is uint128;
 /// @dev An unsigned 192 bit 18 decimal fixed point number
 type UFixed192x18 is uint192;
 
+/// @dev An unsigned 256 bit 4 decimal fixed point number
+/// @dev Minimum supported value for 4 decimal fixed point numbers
+type UFixed256x4 is uint256;
+
+/// @dev An unsigned 16 bit 4 decimal fixed point number
+type UFixed16x4 is uint16;
+
+/// @dev An unsigned 24 bit 4 decimal fixed point number
+type UFixed24x4 is uint24;
+
+/// @dev An unsigned 32 bit 4 decimal fixed point number
+type UFixed32x4 is uint32;
+
+/// @dev An unsigned 64 bit 4 decimal fixed point number
+type UFixed48x4 is uint48;
+
+/// @dev An unsigned 64 bit 4 decimal fixed point number
+type UFixed64x4 is uint64;
+
+/// @dev An unsigned 80 bit 4 decimal fixed point number
+type UFixed80x4 is uint80;
+
+/// @dev An unsigned 96 bit 4 decimal fixed point number
+type UFixed96x4 is uint96;
+
+/// @dev An unsigned 128 bit 4 decimal fixed point number
+type UFixed128x4 is uint128;
+
+/// @dev An unsigned 128 bit 4 decimal fixed point number
+type UFixed192x4 is uint192;
+
 using FixedPointMath for UFixed64x18;
 using FixedPointMath for UFixed80x18;
 using FixedPointMath for UFixed96x18;
