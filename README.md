@@ -13,6 +13,16 @@ A package which provides fixed point decimal types. This package supports Solidi
 - `UFixed128x18` - An unsigned 128 bit fixed point number with 18 decimals of precision
 - `UFixed192x18` - An unsigned 192 bit fixed point number with 18 decimals of precision
 - `UFixed256x18` - An unsigned 256 bit fixed point number with 18 decimals of precision
+- `UFixed16x4` - An unsigned 16 bit fixed point number with 4 decimals of precision
+- `UFixed24x4` - An unsigned 24 bit fixed point number with 4 decimals of precision
+- `UFixed32x4` - An unsigned 32 bit fixed point number with 4 decimals of precision
+- `UFixed48x4` - An unsigned 48 bit fixed point number with 4 decimals of precision
+- `UFixed64x4` - An unsigned 64 bit fixed point number with 4 decimals of precision
+- `UFixed80x4` - An unsigned 80 bit fixed point number with 4 decimals of precision
+- `UFixed96x4` - An unsigned 96 bit fixed point number with 4 decimals of precision
+- `UFixed128x4` - An unsigned 128 bit fixed point number with 4 decimals of precision
+- `UFixed196x4` - An unsigned 196 bit fixed point number with 4 decimals of precision
+- `UFixed256x4` - An unsigned 256 bit fixed point number with 4 decimals of precision
 
 ## Operations
 
