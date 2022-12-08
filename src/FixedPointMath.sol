@@ -276,6 +276,36 @@ library FixedPointMath {
         result = floor(value);
     }
 
+    /// @dev Compares two unsigned 256 bit 18 decimal fixed point numbers to see if `x` is greater than `y`
+    /// @param x The first unsigned 256 bit 18 decimal fixed point number
+    /// @param y The second unsigned 256 bit 18 decimal fixed point number
+    /// @return result `true` if `x > y` and `false` otherwise
+    function gt(UFixed256x18 x, UFixed256x18 y) internal pure returns (bool result) {
+        assembly {
+            result := gt(x, y)
+        }
+    }
+
+    /// @dev Compares two unsigned 256 bit 18 decimal fixed point numbers to see if `x` is less than `y`
+    /// @param x The first unsigned 256 bit 18 decimal fixed point number
+    /// @param y The second unsigned 256 bit 18 decimal fixed point number
+    /// @return result `true` if `x < y` and `false` otherwise
+    function lt(UFixed256x18 x, UFixed256x18 y) internal pure returns (bool result) {
+        assembly {
+            result := lt(x, y)
+        }
+    }
+
+    /// @dev Compares two unsigned 256 bit 18 decimal fixed point numbers to see if they are equal
+    /// @param x The first unsigned 256 bit 18 decimal fixed point number
+    /// @param y The second unsigned 256 bit 18 decimal fixed point number
+    /// @return result `true` if `x == y` and `false` otherwise
+    function eq(UFixed256x18 x, UFixed256x18 y) internal pure returns (bool result) {
+        assembly {
+            result := eq(x, y)
+        }
+    }
+
     /// @dev Unwraps an unsigned 256 bit 18 decimal fixed point number into an unsigned 256 bit integer
     /// @dev Alias for `UFixed256x18.unwrap`
     /// @param value The unsigned 256 bit 18 decimal fixed point number to unwrap
