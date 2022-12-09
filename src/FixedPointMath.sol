@@ -276,6 +276,16 @@ library FixedPointMath {
         result = floor(value);
     }
 
+    /// @dev Compares two unsigned 256 bit 18 decimal fixed point numbers
+    /// @param x The first unsigned 256 bit 18 decimal fixed point number
+    /// @param y The second unsigned 256 bit 18 decimal fixed point number
+    /// @return result `-1` if `x < y`, `0` if `x == y`, or `1` if `x > y`
+    function cmp(UFixed256x18 x, UFixed256x18 y) internal pure returns (int256 result) {
+        assembly {
+            result := or(mul(lt(x, y), MAX_UINT256), gt(x, y))
+        }
+    }
+
     /// @dev Compares two unsigned 256 bit 18 decimal fixed point numbers to see if `x` is greater than `y`
     /// @param x The first unsigned 256 bit 18 decimal fixed point number
     /// @param y The second unsigned 256 bit 18 decimal fixed point number
