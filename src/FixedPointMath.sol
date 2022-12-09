@@ -54,13 +54,13 @@ type UFixed128x4 is uint128;
 /// @dev An unsigned 128 bit 4 decimal fixed point number
 type UFixed192x4 is uint192;
 
-using FixedPointMath for UFixed64x18;
-using FixedPointMath for UFixed80x18;
-using FixedPointMath for UFixed96x18;
-using FixedPointMath for UFixed112x18;
-using FixedPointMath for UFixed128x18;
-using FixedPointMath for UFixed192x18;
-using FixedPointMath for UFixed256x18;
+using FixedPointMath for UFixed64x18 global;
+using FixedPointMath for UFixed80x18 global;
+using FixedPointMath for UFixed96x18 global;
+using FixedPointMath for UFixed112x18 global;
+using FixedPointMath for UFixed128x18 global;
+using FixedPointMath for UFixed192x18 global;
+using FixedPointMath for UFixed256x18 global;
 
 /// @title Library for fixed point math operations
 /// @custom:coauthor ainmox (ainmox.eth)
