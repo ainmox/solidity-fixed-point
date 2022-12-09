@@ -233,6 +233,16 @@ library FixedPointMath {
         }
     }
 
+    /// @dev Divides an unsigned 256 bit 18 decimal fixed point number by an unsigned 256 bit integer
+    /// @param x The unsigned 256 bit 18 decimal fixed point number to divide
+    /// @param y The unsigned 256 bit 18 integer to divide by
+    /// @return result The resulting unsigned 256 bit 18 decimal fixed point number
+    function unsafeDiv(UFixed256x18 x, uint256 y) internal pure returns (UFixed256x18 result) {
+        assembly {
+            result := div(x, y)
+        }
+    }
+
     /// @dev Rounds up an unsigned 256 bit 18 decimal fixed point number to the smallest unsigned 256 bit integer
     ///      greater than or equal to the number
     /// @param value The unsigned 256 bit 18 decimal fixed point number to round up
