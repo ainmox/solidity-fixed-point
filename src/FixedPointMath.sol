@@ -364,4 +364,20 @@ library FixedPointMath {
     function unwrap(Fixed256x18 value) internal pure returns (int256 result) {
         result = Fixed256x18.unwrap(value);
     }
+
+    /// @dev Gets the minimum of two unsigned 256 bit 18 decimal fixed point numbers
+    /// @param x The first unsigned 256 bit 18 decimal fixed point number
+    /// @param y The second unsigned 256 bit 18 decimal fixed point number
+    /// @return result The minimum 256 bit decimal fixed point number
+    function min(UFixed256x18 x, UFixed256x18 y) internal pure returns (UFixed256x18 result) {
+        assembly {
+            switch lt(x, y)
+            case 1 {
+                result := x
+            }
+            default {
+                result := y
+            }
+        }
+    }
 }
