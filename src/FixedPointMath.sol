@@ -281,5 +281,4 @@ library FixedPointMath {
     function unwrap(UFixed256x18 value) internal pure returns (uint256 result) {
         result = UFixed256x18.unwrap(value);
     }
-
 }
