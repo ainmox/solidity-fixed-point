@@ -197,6 +197,19 @@ library FixedPointMath {
         ));
     }
 
+    /// @dev Multiplies an unsigned 256 bit 18 decimal fixed point number by an unsigned 256 bit integer
+    /// @param x The unsigned 256 bit 18 decimal fixed point number
+    /// @param y The unsigned 256 bit integer
+    /// @return result The resulting unsigned 256 bit 18 decimal fixed point number
+    function mul(UFixed256x18 x, uint256 y) internal pure returns (UFixed256x18 result) {
+        assembly {
+            if mul(x, gt(x, div(MAX_UINT256, y))) {
+                revert(0, 0)
+            }
+            result := mul(x, y)
+        }
+    }
+
     /// @dev Adds two unsigned 256 bit 18 decimal fixed point numbers without checking for overflow
     /// @param x The first unsigned 256 bit 18 decimal fixed point number
     /// @param y The second unsigned 256 bit 18 decimal fixed point number
@@ -217,6 +230,16 @@ library FixedPointMath {
         }
     }
 
+    /// @dev Multiplies an unsigned 256 bit 18 decimal fixed point number by an unsigned 256 bit integer
+    /// @param x The unsigned 256 bit 18 decimal fixed point number to divide
+    /// @param y The unsigned 256 bit 18 integer to multiply by
+    /// @return result The resulting unsigned 256 bit 18 decimal fixed point number
+    function unsafeMul(UFixed256x18 x, uint256 y) internal pure returns (UFixed256x18 result) {
+        assembly {
+            result := mul(x, y)
+        }
+    }
+
     /// @dev Divides an unsigned 256 bit 18 decimal fixed point number by an unsigned 256 bit integer
     /// @param x The unsigned 256 bit 18 decimal fixed point number to divide
     /// @param y The unsigned 256 bit 18 integer to divide by
@@ -225,6 +248,13 @@ library FixedPointMath {
         assembly {
             result := div(x, y)
         }
+    }
+
+    /// @dev The natural exponentiation of an unsigned 256 bit 18 decimal fixed point number
+    /// @param x The unsigned 256 bit 18 decimal exponent
+    /// @return result THe resulting unsigned 256 bit 18 decimal fixed point number
+    function exp(UFixed256x18 x) internal pure returns (UFixed256x18 result) {
+
     }
 
     /// @dev The natural exponentiation of a signed 256 bit 18 decimal fixed point number
