@@ -210,6 +210,19 @@ library FixedPointMath {
         }
     }
 
+    /// @dev Divides an unsigned 256 bit 18 decimal fixed point number by an unsigned 256 bit integer
+    /// @param x The unsigned 256 bit 18 decimal fixed point number
+    /// @param y The unsigned 256 bit integer
+    /// @return result The resulting unsigned 256 bit 18 decimal fixed point number
+    function div(UFixed256x18 x, uint256 y) internal pure returns (UFixed256x18 result) {
+        assembly {
+            if iszero(y) {
+                revert(0, 0)
+            }
+            result := div(x, y)
+        }
+    }
+
     /// @dev Adds two unsigned 256 bit 18 decimal fixed point numbers without checking for overflow
     /// @param x The first unsigned 256 bit 18 decimal fixed point number
     /// @param y The second unsigned 256 bit 18 decimal fixed point number
