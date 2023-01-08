@@ -203,7 +203,7 @@ library FixedPointMath {
     /// @return result The resulting unsigned 256 bit 18 decimal fixed point number
     function mul(UFixed256x18 x, uint256 y) internal pure returns (UFixed256x18 result) {
         assembly {
-            if mul(x, gt(x, div(MAX_UINT256, y))) {
+            if mul(y, gt(x, div(MAX_UINT256, y))) {
                 revert(0, 0)
             }
             result := mul(x, y)
