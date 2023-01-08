@@ -410,4 +410,20 @@ library FixedPointMath {
             }
         }
     }
+
+    /// @dev Gets the maximum of two unsigned 256 bit 18 decimal fixed point numbers
+    /// @param x The first unsigned 256 bit 18 decimal fixed point number
+    /// @param y The second unsigned 256 bit 18 decimal fixed point number
+    /// @return result The maximum 256 bit decimal fixed point number
+    function max(UFixed256x18 x, UFixed256x18 y) internal pure returns (UFixed256x18 result) {
+        assembly {
+            switch gt(x, y)
+            case 1 {
+                result := x
+            }
+            default {
+                result := y
+            }
+        }
+    }
 }
